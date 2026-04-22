@@ -84,20 +84,17 @@ export default function LuxuryNavbar() {
             </div>
 
             {/* CTA */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden lg:block">
               <button
                 onClick={() => {
                   const event = new CustomEvent("open-ai-chat");
                   window.dispatchEvent(event);
                 }}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#d4af37]/10 border border-[#d4af37]/30 text-[#d4af37] hover:bg-[#d4af37]/20 transition-all cursor-pointer"
+                className="btn-luxury flex items-center gap-2"
               >
                 <Sparkles className="w-4 h-4" />
-                <span className="font-body text-sm font-semibold">AI Tutor</span>
+                AI Tutor
               </button>
-              <Link href="/contact" className="btn-luxury">
-                Book Now
-              </Link>
             </div>
 
             {/* Mobile Menu */}
@@ -157,25 +154,18 @@ export default function LuxuryNavbar() {
                   ))}
                 </nav>
 
-                <div className="p-6 space-y-3 border-t border-white/10">
+                <div className="p-6 border-t border-white/10">
                   <button
                     onClick={() => {
                       const event = new CustomEvent("open-ai-chat");
                       window.dispatchEvent(event);
                       setIsMobileMenuOpen(false);
                     }}
-                    className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-lg bg-[#d4af37]/10 border border-[#d4af37]/30 text-[#d4af37] hover:bg-[#d4af37]/20 transition-all cursor-pointer"
+                    className="btn-luxury w-full justify-center flex items-center gap-2"
                   >
                     <Sparkles className="w-4 h-4" />
-                    <span className="font-body text-sm font-semibold">AI Tutor</span>
+                    AI Tutor
                   </button>
-                  <Link
-                    href="/contact"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="btn-luxury w-full justify-center"
-                  >
-                    Book Now
-                  </Link>
                 </div>
               </div>
             </motion.div>
