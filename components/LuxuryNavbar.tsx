@@ -90,7 +90,7 @@ export default function LuxuryNavbar() {
                   const event = new CustomEvent("open-ai-chat");
                   window.dispatchEvent(event);
                 }}
-                className="btn-luxury flex items-center gap-2"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#d4af37] to-[#b8962e] text-black font-semibold text-sm hover:shadow-lg hover:shadow-[#d4af37]/30 transition-all cursor-pointer"
               >
                 <Sparkles className="w-4 h-4" />
                 AI Tutor
@@ -161,7 +161,7 @@ export default function LuxuryNavbar() {
                       window.dispatchEvent(event);
                       setIsMobileMenuOpen(false);
                     }}
-                    className="btn-luxury w-full justify-center flex items-center gap-2"
+                    className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#d4af37] to-[#b8962e] text-black font-semibold text-sm w-full hover:shadow-lg hover:shadow-[#d4af37]/30 transition-all cursor-pointer"
                   >
                     <Sparkles className="w-4 h-4" />
                     AI Tutor
