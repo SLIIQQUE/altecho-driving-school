@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Playfair_Display, DM_Sans } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import AIChatWidget from "@/components/AIChatWidget";
 
-const displayFont = Playfair_Display({
+const displayFont = Outfit({
   variable: "--font-display-var",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
-const bodyFont = DM_Sans({
+const bodyFont = Plus_Jakarta_Sans({
   variable: "--font-body-var",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
