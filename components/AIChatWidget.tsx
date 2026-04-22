@@ -95,7 +95,7 @@ export default function AIChatWidget() {
           id: Date.now().toString(),
           role: "assistant",
           content:
-            "Sorry, I'm having trouble connecting. Please try again or call us directly.",
+            "Sorry, I'm having trouble connecting. Please try again or use the contact form.",
           timestamp: new Date(),
         },
       ]);
