@@ -124,12 +124,13 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 rounded-lg bg-[#d4af37] text-black font-body font-semibold flex items-center gap-2 hover:bg-[#f5c542] transition-colors"
+                  aria-label="Subscribe to newsletter"
+                  className="px-6 py-3 rounded-lg bg-[#d4af37] text-black font-body font-semibold flex items-center gap-2 hover:bg-[#f5c542] transition-colors min-h-[48px] min-w-[48px]"
                 >
                   <Send className="w-4 h-4" />
                 </button>
               </form>
-              <p className="text-xs text-gray-600 mt-3 font-body">
+              <p className="text-xs text-gray-400 mt-3 font-body">
                 We respect your privacy. No spam, ever.
               </p>
             </div>
@@ -240,20 +241,20 @@ export default function Footer() {
         <div className="container-main py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-6">
             <div className="flex flex-col md:flex-row items-center gap-6">
-              <p className="text-sm text-gray-600 font-body">
+              <p className="text-sm text-gray-400 font-body">
                 &copy; {new Date().getFullYear()} Altecho Driving School. All rights reserved.
               </p>
               <div className="flex items-center gap-6">
-                <a href="/privacy" className="text-sm text-gray-600 hover:text-[#d4af37] transition-colors font-body">Privacy Policy</a>
-                <a href="/terms" className="text-sm text-gray-600 hover:text-[#d4af37] transition-colors font-body">Terms of Service</a>
-                {/* <a href="/terms" className="text-sm text-gray-600 hover:text-[#d4af37] transition-colors font-body">Cookie Policy</a> */}
+                <a href="/privacy" className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors font-body">Privacy Policy</a>
+                <a href="/terms" className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors font-body">Terms of Service</a>
+                {/* <a href="/terms" className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors font-body">Cookie Policy</a> */}
               </div>
             </div>
             <a 
               href="https://sliiqque.space" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-gray-600 hover:text-[#d4af37] transition-colors font-body flex items-center gap-2"
+              className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors font-body flex items-center gap-2"
             >
               <Sparkles className="w-4 h-4 text-[#d4af37]" />
               Designed by <span className="text-[#d4af37] font-semibold">SLIIQQUE</span>

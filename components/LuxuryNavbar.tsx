@@ -106,7 +106,8 @@ export default function LuxuryNavbar() {
 
             {/* Mobile Menu */}
             <button
-              className="lg:hidden p-2 rounded-lg hover:bg-white/5 transition-colors"
+              aria-label="Open menu"
+              className="lg:hidden p-2 rounded-lg hover:bg-white/5 transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center"
               onClick={() => setIsMobileMenuOpen(true)}
             >
               <Menu className="w-6 h-6 text-[#d4af37]" />

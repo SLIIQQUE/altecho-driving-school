@@ -167,8 +167,9 @@ export default function LuxuryTestimonials() {
         <div className="flex items-center justify-center gap-6" style={{ marginBottom: '48px' }}>
           <button
             onClick={prev}
+            aria-label="Previous testimonial"
             style={{
-              width: '44px', height: '44px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.15)', 
+              width: '48px', height: '48px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.15)', 
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               background: 'transparent', cursor: 'pointer', transition: 'all 0.3s'
             }}
@@ -181,8 +182,10 @@ export default function LuxuryTestimonials() {
               <button
                 key={i}
                 onClick={() => setActiveIndex(i)}
+                aria-label={`Go to testimonial ${i + 1}`}
+                aria-current={i === activeIndex ? 'true' : 'false'}
                 style={{
-                  width: '8px', height: '8px', borderRadius: '50%', 
+                  width: '12px', height: '12px', borderRadius: '50%', 
                   background: i === activeIndex ? '#d4af37' : 'rgba(255,255,255,0.2)',
                   border: 'none', cursor: 'pointer', transition: 'all 0.3s'
                 }}
@@ -192,8 +195,9 @@ export default function LuxuryTestimonials() {
           
           <button
             onClick={next}
+            aria-label="Next testimonial"
             style={{
-              width: '44px', height: '44px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.15)', 
+              width: '48px', height: '48px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.15)', 
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               background: 'transparent', cursor: 'pointer', transition: 'all 0.3s'
             }}
@@ -208,6 +212,8 @@ export default function LuxuryTestimonials() {
             <button
               key={i}
               onClick={() => setActiveIndex(i)}
+              aria-label={`View ${testimonial.name}'s testimonial`}
+              aria-current={i === activeIndex ? 'true' : 'false'}
               className={`w-14 h-14 rounded-full overflow-hidden border-2 transition-all ${
                 i === activeIndex 
                   ? 'border-[#d4af37] scale-110' 
