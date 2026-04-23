@@ -4,7 +4,17 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { MapPin, Mail, Clock, Send, Shield, Award, Users, Sparkles, MessageCircle } from "lucide-react";
+import {
+  MapPin,
+  Mail,
+  Clock,
+  Send,
+  Shield,
+  Award,
+  Users,
+  Sparkles,
+  MessageCircle,
+} from "lucide-react";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -17,7 +27,7 @@ const quickLinks = [
 
 const services = [
   "Beginner Lessons",
-  "Refresher Courses", 
+  "Refresher Courses",
   "Defensive Driving",
   "License Acquisition",
   "Mock Tests",
@@ -42,12 +52,37 @@ export default function Footer() {
     <footer className="bg-[#050505] relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div style={{ position: 'absolute', top: 0, left: '25%', width: '384px', height: '384px', borderRadius: '50%', background: 'rgba(212,175,55,0.03)', filter: 'blur(100px)' }} />
-        <div style={{ position: 'absolute', bottom: 0, right: '25%', width: '320px', height: '320px', borderRadius: '50%', background: 'rgba(212,175,55,0.02)', filter: 'blur(80px)' }} />
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: "25%",
+            width: "384px",
+            height: "384px",
+            borderRadius: "50%",
+            background: "rgba(212,175,55,0.03)",
+            filter: "blur(100px)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            right: "25%",
+            width: "320px",
+            height: "320px",
+            borderRadius: "50%",
+            background: "rgba(212,175,55,0.02)",
+            filter: "blur(80px)",
+          }}
+        />
       </div>
 
       {/* Main Footer Content */}
-      <div className="container-main relative" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
+      <div
+        className="container-main relative"
+        style={{ paddingTop: "80px", paddingBottom: "80px" }}
+      >
         {/* Top Section - Brand & Features */}
         <div className="grid lg:grid-cols-2 gap-16 mb-16">
           {/* Brand Column */}
@@ -62,14 +97,19 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-bold text-2xl text-white tracking-wide">ALTECHO</span>
-                <span className="text-sm text-[#d4af37] tracking-widest uppercase">Driving School</span>
+                <span className="font-display font-bold text-2xl text-white tracking-wide">
+                  ALTECHO
+                </span>
+                <span className="text-sm text-[#d4af37] tracking-widest uppercase">
+                  Driving School
+                </span>
               </div>
             </Link>
-            
+
             <p className="text-gray-400 mb-8 font-body leading-relaxed max-w-md">
-              Transforming novices into confident, skilled drivers since 2014. Our mission is to provide 
-              world-class driving education that exceeds expectations and creates safer roads for everyone.
+              Transforming novices into confident, skilled drivers since 2014.
+              Our mission is to provide world-class driving education that
+              exceeds expectations and creates safer roads for everyone.
             </p>
 
             {/* Features Badges */}
@@ -84,7 +124,9 @@ export default function Footer() {
                   className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#d4af37]/5 border border-[#d4af37]/20"
                 >
                   <feature.icon className="w-4 h-4 text-[#d4af37]" />
-                  <span className="text-sm text-gray-300 font-body">{feature.label}</span>
+                  <span className="text-sm text-gray-300 font-body">
+                    {feature.label}
+                  </span>
                 </motion.div>
               ))}
             </div>
@@ -110,9 +152,12 @@ export default function Footer() {
           {/* Newsletter Column */}
           <div>
             <div className="card-luxury p-8 h-full">
-              <h3 className="font-display text-xl text-white mb-4">Stay Updated</h3>
+              <h3 className="font-display text-xl text-white mb-4">
+                Stay Updated
+              </h3>
               <p className="text-gray-400 mb-6 font-body">
-                Subscribe to our newsletter for driving tips, special offers, and updates.
+                Subscribe to our newsletter for driving tips, special offers,
+                and updates.
               </p>
               <form onSubmit={handleSubscribe} className="flex gap-3">
                 <input
@@ -151,7 +196,10 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-gray-500 hover:text-[#d4af37] transition-colors font-body inline-flex items-center gap-2 group">
+                  <Link
+                    href={link.href}
+                    className="text-sm text-gray-500 hover:text-[#d4af37] transition-colors font-body inline-flex items-center gap-2 group"
+                  >
                     <span className="w-1 h-1 rounded-full bg-gray-700 group-hover:bg-[#d4af37] transition-colors" />
                     {link.label}
                   </Link>
@@ -191,7 +239,9 @@ export default function Footer() {
                 </div>
                 <div>
                   <h5 className="font-display text-white mb-1">Visit Us</h5>
-                  <p className="text-sm text-gray-500 font-body">Ipaja, Lagos, Nigeria</p>
+                  <p className="text-sm text-gray-500 font-body">
+                    Ipaja, Lagos, Nigeria
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
@@ -199,8 +249,10 @@ export default function Footer() {
                   <MessageCircle className="w-5 h-5 text-[#d4af37]" />
                 </div>
                 <div>
-                  <h5 className="font-display text-white mb-1">AI Driving Tutor</h5>
-                  <button 
+                  <h5 className="font-display text-white mb-1">
+                    AI Driving Tutor
+                  </h5>
+                  <button
                     onClick={() => {
                       const event = new CustomEvent("open-ai-chat");
                       window.dispatchEvent(event);
@@ -217,7 +269,10 @@ export default function Footer() {
                 </div>
                 <div>
                   <h5 className="font-display text-white mb-1">Email Us</h5>
-                  <a href="mailto:info@altecho.com" className="text-sm text-gray-500 hover:text-[#d4af37] transition-colors font-body">
+                  <a
+                    href="mailto:info@altecho.com"
+                    className="text-sm text-gray-500 hover:text-[#d4af37] transition-colors font-body"
+                  >
                     info@altecho.com
                   </a>
                 </div>
@@ -228,7 +283,9 @@ export default function Footer() {
                 </div>
                 <div>
                   <h5 className="font-display text-white mb-1">Hours</h5>
-                  <p className="text-sm text-gray-500 font-body">Mon - Sat: 8AM - 6PM</p>
+                  <p className="text-sm text-gray-500 font-body">
+                    Mon - Sat: 8AM - 6PM
+                  </p>
                 </div>
               </div>
             </div>
@@ -242,22 +299,33 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-6">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <p className="text-sm text-gray-400 font-body">
-                &copy; {new Date().getFullYear()} Altecho Driving School. All rights reserved.
+                &copy; {new Date().getFullYear()} Altecho Driving School. All
+                rights reserved.
               </p>
               <div className="flex items-center gap-6">
-                <a href="/privacy" className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors font-body">Privacy Policy</a>
-                <a href="/terms" className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors font-body">Terms of Service</a>
+                <a
+                  href="/privacy"
+                  className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors font-body"
+                >
+                  Privacy Policy
+                </a>
+                <a
+                  href="/terms"
+                  className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors font-body"
+                >
+                  Terms of Service
+                </a>
                 {/* <a href="/terms" className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors font-body">Cookie Policy</a> */}
               </div>
             </div>
-            <a 
-              href="https://sliiqque.space" 
+            <a
+              href="https://sliiqque.space"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors font-body flex items-center gap-2"
+              className="text-sm text-gray-400 transition-colors font-body flex items-center gap-2"
             >
-              <Sparkles className="w-4 h-4 text-[#d4af37]" />
-              Designed by <span className="text-[#d4af37] font-semibold">SLIIQQUE</span>
+              Designed by{" "}
+              <span className="text-[#d4af37] font-semibold">SLIIQQUE</span>
             </a>
           </div>
         </div>
