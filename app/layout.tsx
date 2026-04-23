@@ -84,6 +84,7 @@ export default function RootLayout({
       className={`${displayFont.variable} ${bodyFont.variable} h-full antialiased scroll-smooth`}
     >
       <head>
+        <link rel="icon" href="/images/logo.jpg" type="image/jpeg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
