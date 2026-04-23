@@ -246,7 +246,7 @@ export default function Footer() {
               <div className="flex items-center gap-6">
                 <a href="/privacy" className="text-sm text-gray-600 hover:text-[#d4af37] transition-colors font-body">Privacy Policy</a>
                 <a href="/terms" className="text-sm text-gray-600 hover:text-[#d4af37] transition-colors font-body">Terms of Service</a>
-                <a href="/terms" className="text-sm text-gray-600 hover:text-[#d4af37] transition-colors font-body">Cookie Policy</a>
+                {/* <a href="/terms" className="text-sm text-gray-600 hover:text-[#d4af37] transition-colors font-body">Cookie Policy</a> */}
               </div>
             </div>
             <a 
