@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "motion/react";
-import { Car, MapPin, Mail, Clock, Send, Shield, Award, Users, Sparkles, MessageCircle } from "lucide-react";
+import { MapPin, Mail, Clock, Send, Shield, Award, Users, Sparkles, MessageCircle } from "lucide-react";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -52,8 +53,13 @@ export default function Footer() {
           {/* Brand Column */}
           <div>
             <Link href="/" className="flex items-center gap-4 mb-6 group">
-              <div className="w-16 h-16 rounded-full border-2 border-[#d4af37] flex items-center justify-center bg-[#d4af37]/5">
-                <Car className="w-7 h-7 text-[#d4af37]" />
+              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-[#d4af37]">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Altecho Driving School"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-bold text-2xl text-white tracking-wide">ALTECHO</span>
@@ -86,8 +92,8 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex gap-3">
               {[
-                { icon: Car, label: "Facebook" },
-                { icon: Award, label: "Instagram" },
+                { icon: Award, label: "Facebook" },
+                { icon: Users, label: "Instagram" },
                 { icon: Shield, label: "X" },
               ].map((social) => (
                 <a

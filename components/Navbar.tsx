@@ -2,10 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Car, Sparkles } from "lucide-react";
+import { Menu, X, Car, Hexagon } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -16,7 +15,7 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-export default function LuxuryNavbar() {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -34,46 +33,39 @@ export default function LuxuryNavbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "glass-luxury shadow-lg shadow-black/50"
+            ? "glass-dark shadow-lg shadow-black/50"
             : "bg-transparent"
         }`}
       >
-        <nav className="container-main">
-          <div className="flex items-center justify-between" style={{ height: '80px' }}>
+        <nav className="container-neon">
+          <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative">
                 <div className="w-12 h-12 flex items-center justify-center">
-                  {/* Logo Image */}
-                  <div className="relative w-12 h-12 overflow-hidden rounded-full">
-                    <Image
-                      src="/images/logo.jpg"
-                      alt="Altecho Driving School"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+                  <Hexagon className="w-10 h-10 text-primary animate-pulse-glow" strokeWidth={1} />
+                  <Car className="w-5 h-5 text-primary absolute" />
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-bold text-xl text-white tracking-wide">
+                <span className="font-display font-bold text-xl text-white tracking-wider">
                   ALTECHO
                 </span>
-                <span className="text-xs text-[#d4af37] tracking-widest uppercase">
-                  Driving School
+                <span className="font-mono text-xs text-primary tracking-widest">
+                  DRIVING SCHOOL
                 </span>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-4 py-2 font-body text-sm tracking-wide transition-all duration-300 relative ${
+                  className={`px-4 py-2 font-mono text-sm tracking-wider transition-all duration-300 relative ${
                     pathname === link.href
-                      ? "text-[#d4af37]"
+                      ? "text-primary"
                       : "text-gray-400 hover:text-white"
                   }`}
                 >
@@ -81,7 +73,7 @@ export default function LuxuryNavbar() {
                   {pathname === link.href && (
                     <motion.div
                       layoutId="nav-glow"
-                      className="absolute inset-0 border border-[#d4af37]/30 rounded-md"
+                      className="absolute inset-0 border border-primary/30 rounded-md"
                       initial={false}
                       transition={{ type: "spring", stiffness: 500, damping: 30 }}
                     />
@@ -92,16 +84,9 @@ export default function LuxuryNavbar() {
 
             {/* CTA */}
             <div className="hidden lg:block">
-              <button
-                onClick={() => {
-                  const event = new CustomEvent("open-ai-chat");
-                  window.dispatchEvent(event);
-                }}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#d4af37] to-[#b8962e] text-black font-semibold text-sm hover:shadow-lg hover:shadow-[#d4af37]/30 transition-all cursor-pointer"
-              >
-                <Sparkles className="w-4 h-4" />
-                AI Tutor
-              </button>
+              <Link href="/contact" className="btn-neon btn-neon-fill">
+                Book Now
+              </Link>
             </div>
 
             {/* Mobile Menu */}
@@ -109,7 +94,7 @@ export default function LuxuryNavbar() {
               className="lg:hidden p-2 rounded-lg hover:bg-white/5 transition-colors"
               onClick={() => setIsMobileMenuOpen(true)}
             >
-              <Menu className="w-6 h-6 text-[#d4af37]" />
+              <Menu className="w-6 h-6 text-primary" />
             </button>
           </div>
         </nav>
@@ -131,7 +116,7 @@ export default function LuxuryNavbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 right-0 bottom-0 w-80 max-w-full bg-[#0a0a0a] z-50 lg:hidden border-l border-[#d4af37]/20"
+              className="fixed top-0 right-0 bottom-0 w-80 max-w-full bg-[#0a0a0f] z-50 lg:hidden border-l border-primary/20"
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-6 border-b border-white/10">
@@ -140,7 +125,7 @@ export default function LuxuryNavbar() {
                     className="p-2 rounded-lg hover:bg-white/5 transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <X className="w-6 h-6 text-[#d4af37]" />
+                    <X className="w-6 h-6 text-primary" />
                   </button>
                 </div>
 
@@ -150,9 +135,9 @@ export default function LuxuryNavbar() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block px-4 py-3 font-body text-sm tracking-wide transition-all duration-200 ${
+                      className={`block px-4 py-3 font-mono text-sm tracking-wider transition-all duration-200 ${
                         pathname === link.href
-                          ? "text-[#d4af37] border border-[#d4af37]/30 rounded-md bg-[#d4af37]/5"
+                          ? "text-primary border border-primary/30 rounded-md bg-primary/5"
                           : "text-gray-400 hover:text-white"
                       }`}
                     >
@@ -162,17 +147,13 @@ export default function LuxuryNavbar() {
                 </nav>
 
                 <div className="p-6 border-t border-white/10">
-                  <button
-                    onClick={() => {
-                      const event = new CustomEvent("open-ai-chat");
-                      window.dispatchEvent(event);
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#d4af37] to-[#b8962e] text-black font-semibold text-sm w-full hover:shadow-lg hover:shadow-[#d4af37]/30 transition-all cursor-pointer"
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="btn-neon btn-neon-fill w-full justify-center"
                   >
-                    <Sparkles className="w-4 h-4" />
-                    AI Tutor
-                  </button>
+                    Book Now
+                  </Link>
                 </div>
               </div>
             </motion.div>

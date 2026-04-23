@@ -3,6 +3,7 @@ import LuxuryHero from "@/components/LuxuryHero";
 import LuxuryServices from "@/components/LuxuryServices";
 import LuxuryTestimonials from "@/components/LuxuryTestimonials";
 import LuxuryPricing from "@/components/LuxuryPricing";
+import LuxuryGallery from "@/components/LuxuryGallery";
 import AIHomepageCTA from "@/components/AIHomepageCTA";
 import Areas from "@/components/Areas";
 import CTA from "@/components/CTA";
@@ -17,6 +18,7 @@ export default function Home() {
         <LuxuryServices />
         <LuxuryTestimonials />
         <LuxuryPricing />
+        <LuxuryGallery />
         <AIHomepageCTA />
         <Areas />
         <CTA />
